@@ -8,20 +8,10 @@
 </head>
 <body>
     <!-- add your code here -->
-	<input id="newTodoInput" type="input"/>
-    <button id="addTodoBtn" type="button">Add todo</button>
+	<input id="newTodoInput" />
+    <button id="addTodoBtn">Add todo</button>
     <!-- your javascript must add todos inside the following tag as <li> tags! -->
     <ol id="todoList"></ol>
-	<script>
-document.querySelector('#addTodoBtn').onclick = function(){
-    if(document.querySelector('#newTodoInput').value.length == 0){
-        alert("Kindly Enter Task Name!!!!")
-    }
-
-    else{
-        document.querySelector('#todoList').innerHTML += `
-                    ${document.querySelector('#newTodoInput').value}`;
-		}
-    }</script>
+    <script type="text/javascript" src="./script.js"></script>
 </body>
 </html>
