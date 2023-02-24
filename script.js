@@ -1,17 +1,22 @@
+const newTodoInput = document.getElementById("newTodoInput");
+const addTodoBtn = document.getElementById("addTodoBtn");
+const todoList = document.getElementById("todoList");
 
-//your code here
-var todoValue = document.getElementById("newTodoInput");
-var btn = document.getElementById("addTodoBtn");
-var ol = document.getElementById("todoList");
+// add event listener to the Add todo button
+addTodoBtn.addEventListener("click", () => {
+	const newTodo = newTodoInput.value.trim(); // trim to remove leading/trailing whitespaces
 
-function addTodo()
-{
-	if(todoValue.value){
-	var li = document.createElement('li');
-	li.textContent   =todoValue.value;
-	ol.appendChild(li);
-	todoValue.value = "";taje
-    }
-}
+	// validate the input
+	if (newTodo === "") {
+		alert("Please enter a todo item."); // show an alert if the input is empty
+		return;
+	}
 
-btn.addEventListener('click', addTodo);
+	// create a new list item element and append it to the list
+	const listItem = document.createElement("li");
+	listItem.textContent = newTodo;
+	todoList.appendChild(listItem);
+
+	// clear the input field
+	newTodoInput.value = "";
+});
